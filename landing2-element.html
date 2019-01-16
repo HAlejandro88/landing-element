@@ -1,0 +1,99 @@
+<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../paper-button/paper-button.html">
+
+<dom-module id="landing2-element">
+  <template>
+    <style>
+      :host {
+        display: block;
+        background: #444;
+        margin: 0;
+        font-family: monospace;
+      }
+      h1 {
+        color: #fff;
+        text-align: center;
+      }
+
+      .galeria {
+        width: 90%;
+        margin: auto;
+        list-style: none;
+        padding: 20px;
+        box-sizing: border-box;
+        
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
+
+      .galeria li {
+        margin: 5px;
+      }
+
+      .galeria img {
+        width: 150px;
+        height: 100px;
+        border-radius: 10px;
+      }
+
+      .galeria :hover {
+        width: 200px;
+        height: 150px;
+        box-shadow: 5px 4px #414040;
+      }
+
+      .cerrar {
+        display: block;
+        background: #fff;
+        width: 30px;
+        height: 30px;
+        margin: 15px auto;
+        text-align: center;
+        text-decoration: none;
+        font-size: 25px;
+        color: #000;
+        padding: 5px;
+        border-radius: 50%;
+        line-height: 25px;
+      }
+    </style>
+    <h1>Galareria de Canciones</h1>
+	
+    <ul class="galeria">
+      <li><a href="#img1" on-click="imageOne"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtXWoTVTJtZ26aGjZuanY9RK76XD7byk13nPYbCuPmeONu3ZDz"></a></li>
+      <li><a href="#img2"><img src="http://cdn1.ipauta.com/wp-content/uploads/2018/02/La-Evolucion-Frontal.jpg"></a></li>
+      <li><a href="#img3"><img src="https://pbs.twimg.com/profile_images/911011664136425473/gvsj4FxN_400x400.jpg"></a></li>
+      <li><a href="#img4"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4OpPPGmGeHIAmnBPIlUF6JRSATSOJMbifo7slPNHSwJtf5LPPAQ"></a></li>
+    </ul>
+   
+  </template>
+
+  <script>
+    /**
+     * `landing2-element`
+     * 
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class Landing2Element extends Polymer.Element {
+      static get is() { return 'landing2-element'; }
+      static get properties() {
+        return {
+          image: {
+            type: String,
+            value: ''
+          }
+        };
+      }
+      imageOne(){
+        this.set('image','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtXWoTVTJtZ26aGjZuanY9RK76XD7byk13nPYbCuPmeONu3ZDz');
+        console.log(this.image);
+      }
+    }
+
+    window.customElements.define(Landing2Element.is, Landing2Element);
+  </script>
+</dom-module>
